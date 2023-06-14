@@ -19,7 +19,10 @@ export class GeneralInterceptorService implements HttpInterceptor {
       headers: nlb_token
     });
 
+    console.log("Estoy interceptando");
+    
     return next.handle(cloneReq).pipe(
+      
       catchError(this.manejarError)
     );
   }
